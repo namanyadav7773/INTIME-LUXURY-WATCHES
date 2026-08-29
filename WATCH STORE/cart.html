@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="INTIME — Your shopping cart.">
+
+    <title>Cart | INTIME</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            INTIME
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="shop.html">Shop</a>
+
+            <a href="index.html#brands">Brands</a>
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="nav-icons">
+
+            <a href="shop.html">
+                Continue Shopping
+            </a>
+
+            <a href="cart.html">
+                Cart <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= CART PAGE ================= -->
+
+<main class="cart-page">
+
+
+    <section class="cart-heading">
+
+        <p class="small-heading">
+            INTIME SHOPPING BAG
+        </p>
+
+        <h1>
+            YOUR <span>CART.</span>
+        </h1>
+
+    </section>
+
+
+
+    <!-- CART CONTENT -->
+
+    <section id="cart-container">
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        INTIME
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="shop.html">Shop</a>
+
+        <a href="about.html">About</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+
+    <p>
+        © 2026 INTIME. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- ================= CART JAVASCRIPT ================= -->
+
+<script>
+
+
+let cart =
+    JSON.parse(
+        localStorage.getItem("velorCart")
+    ) || [];
+
+
+const cartContainer =
+    document.getElementById("cart-container");
+
+
+
+/* =========================================
+   UPDATE CART COUNT
+========================================= */
+
+function updateCartCount() {
+
+    const totalQuantity =
+        cart.reduce(function(total, product) {
+
+            return total + Number(product.quantity);
+
+        }, 0);
+
+
+    document
+        .querySelectorAll(".cart-count")
+        .forEach(function(counter) {
+
+            counter.textContent =
+                totalQuantity;
+
+        });
+
+}
+
+
+
+/* =========================================
+   DISPLAY CART
+========================================= */
+
+function displayCart() {
+
+
+    updateCartCount();
+
+
+    /* EMPTY CART */
+
+    if (cart.length === 0) {
+
+        cartContainer.innerHTML = `
+
+            <div class="empty-cart">
+
+                <p class="small-heading">
+                    YOUR SHOPPING BAG
+                </p>
+
+                <h2>
+                    YOUR CART IS EMPTY.
+                </h2>
+
+                <p>
+                    Discover a timepiece that fits your style.
+                </p>
+
+                <a href="shop.html">
+                    EXPLORE WATCHES →
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    let subtotal = 0;
+
+
+    let productsHTML = "";
+
+
+
+    /* CREATE PRODUCTS */
+
+    cart.forEach(function(product, index) {
+
+
+        const productTotal =
+            Number(product.price) *
+            Number(product.quantity);
+
+
+        subtotal += productTotal;
+
+
+
+        productsHTML += `
+
+            <article class="cart-product">
+
+
+                <div class="cart-product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}">
+
+                </div>
+
+
+
+                <div class="cart-product-info">
+
+
+                    <p class="cart-brand">
+                        ${product.brand || "WATCH"}
+                    </p>
+
+
+                    <h2>
+                        ${product.name}
+                    </h2>
+
+
+                    <p class="cart-category">
+                        PREMIUM TIMEPIECE
+                    </p>
+
+
+                    <p class="cart-item-price">
+                        ₹${Number(product.price).toLocaleString("en-IN")}
+                    </p>
+
+
+                    <div class="cart-actions">
+
+
+                        <div class="cart-quantity">
+
+
+                            <button
+                                onclick="changeQuantity(${index}, -1)">
+                                −
+                            </button>
+
+
+                            <span>
+                                ${product.quantity}
+                            </span>
+
+
+                            <button
+                                onclick="changeQuantity(${index}, 1)">
+                                +
+                            </button>
+
+
+                        </div>
+
+
+
+                        <button
+                            class="remove-product"
+                            onclick="removeProduct(${index})">
+
+                            REMOVE
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="cart-item-total">
+
+                    <p>
+                        TOTAL
+                    </p>
+
+                    <strong>
+                        ₹${productTotal.toLocaleString("en-IN")}
+                    </strong>
+
+                </div>
+
+
+            </article>
+
+        `;
+
+    });
+
+
+
+    /* COMPLETE CART */
+
+    cartContainer.innerHTML = `
+
+        <div class="cart-layout">
+
+
+            <!-- PRODUCTS -->
+
+            <div class="cart-products">
+
+
+                <div class="cart-products-header">
+
+                    <p>
+                        ${cart.length}
+                        ${cart.length === 1 ? "ITEM" : "ITEMS"}
+                    </p>
+
+                    <p>
+                        PRODUCT
+                    </p>
+
+                    <p>
+                        TOTAL
+                    </p>
+
+                </div>
+
+
+                ${productsHTML}
+
+
+            </div>
+
+
+
+            <!-- ORDER SUMMARY -->
+
+            <aside class="cart-summary">
+
+
+                <p class="small-heading">
+                    ORDER SUMMARY
+                </p>
+
+
+                <h2>
+                    YOUR ORDER.
+                </h2>
+
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong>
+                        ₹${subtotal.toLocaleString("en-IN")}
+                    </strong>
+
+                </div>
+
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Shipping
+                    </span>
+
+                    <strong>
+                        FREE
+                    </strong>
+
+                </div>
+
+
+
+                <div class="summary-line">
+                </div>
+
+
+
+                <div class="summary-total">
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong>
+                        ₹${subtotal.toLocaleString("en-IN")}
+                    </strong>
+
+                </div>
+
+
+
+                <button
+                    class="checkout-button"
+                    onclick="goToCheckout()">
+
+                    PROCEED TO CHECKOUT
+
+                </button>
+
+
+
+                <a
+                    href="shop.html"
+                    class="continue-shopping">
+
+                    ← CONTINUE SHOPPING
+
+                </a>
+
+
+            </aside>
+
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =========================================
+   CHANGE QUANTITY
+========================================= */
+
+function changeQuantity(index, amount) {
+
+
+    cart[index].quantity =
+        Number(cart[index].quantity) + amount;
+
+
+    if (cart[index].quantity < 1) {
+
+        cart[index].quantity = 1;
+
+    }
+
+
+    localStorage.setItem(
+        "velorCart",
+        JSON.stringify(cart)
+    );
+
+
+    displayCart();
+
+}
+
+
+
+/* =========================================
+   REMOVE PRODUCT
+========================================= */
+
+function removeProduct(index) {
+
+
+    cart.splice(index, 1);
+
+
+    localStorage.setItem(
+        "velorCart",
+        JSON.stringify(cart)
+    );
+
+
+    displayCart();
+
+}
+
+
+
+/* =========================================
+   CHECKOUT
+========================================= */
+
+function goToCheckout() {
+
+
+    if (cart.length === 0) {
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "checkout.html";
+
+}
+
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+displayCart();
+
+
+</script>
+
+
+</body>
+
+</html>

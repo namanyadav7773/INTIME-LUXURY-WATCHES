@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Your VÉLOR order has been confirmed.">
+
+    <title>Order Confirmed | VÉLOR Watches</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="product-header">
+
+        <nav>
+
+            <a href="index.html" class="logo">
+                VÉLOR
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="shop.html">
+                    Shop
+                </a>
+
+                <a href="#">
+                    Collections
+                </a>
+
+                <a href="#">
+                    About
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="nav-icons">
+
+                <a href="shop.html">
+                    Continue Shopping
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= SUCCESS ================= -->
+
+    <main class="success-page">
+
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <p class="small-heading">
+            VÉLOR
+        </p>
+
+
+        <h1>
+            ORDER CONFIRMED.
+        </h1>
+
+
+        <p class="success-message">
+
+            Thank you for choosing VÉLOR.
+            Your order has been successfully placed
+            and is now being prepared.
+
+        </p>
+
+
+        <div class="order-number">
+
+            <span>
+                ORDER NUMBER
+            </span>
+
+            <strong id="order-number">
+                VLR-000000
+            </strong>
+
+        </div>
+
+
+        <div class="success-details">
+
+
+            <div>
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong>
+                    CONFIRMED
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    SHIPPING
+                </span>
+
+                <strong>
+                    FREE
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ESTIMATED DELIVERY
+                </span>
+
+                <strong>
+                    3–7 BUSINESS DAYS
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <a
+            href="shop.html"
+            class="continue-shopping">
+
+            CONTINUE SHOPPING →
+
+        </a>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            VÉLOR
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <p>
+            © 2026 VÉLOR. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function generateOrderNumber() {
+
+            const randomNumber =
+                Math.floor(
+                    100000 + Math.random() * 900000
+                );
+
+            return "VLR-" + randomNumber;
+
+        }
+
+
+        document.getElementById(
+            "order-number"
+        ).textContent = generateOrderNumber();
+
+    </script>
+
+
+</body>
+
+</html>

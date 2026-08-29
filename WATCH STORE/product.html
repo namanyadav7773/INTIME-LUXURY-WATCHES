@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="INTIME — Premium multi-brand watches.">
+
+    <title>Product | INTIME</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            INTIME
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="brands.html">
+                Brands
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="nav-icons">
+
+            <a href="cart.html">
+                Cart
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= PRODUCT ================= -->
+
+<main>
+
+<section class="product-detail">
+
+
+    <!-- PRODUCT IMAGE -->
+
+    <div class="product-gallery">
+
+        <div class="product-main-image">
+
+            <span
+                class="product-badge"
+                id="product-badge">
+            </span>
+
+
+            <img
+                id="product-image"
+                src=""
+                alt="Watch">
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PRODUCT INFORMATION -->
+
+    <div class="product-details">
+
+
+        <p
+            class="product-category"
+            id="product-category">
+        </p>
+
+
+        <h1 id="product-name">
+        </h1>
+
+
+        <p
+            class="product-price"
+            id="product-price">
+        </p>
+
+
+        <div class="product-rating">
+
+            <span>
+                ★★★★★
+            </span>
+
+            <p>
+                Premium Selection
+            </p>
+
+        </div>
+
+
+        <div class="product-line">
+        </div>
+
+
+        <p
+            class="product-description"
+            id="product-description">
+        </p>
+
+
+
+        <!-- QUANTITY -->
+
+        <div class="quantity-section">
+
+            <p>
+                QUANTITY
+            </p>
+
+
+            <div class="quantity">
+
+                <button id="minus">
+                    −
+                </button>
+
+
+                <span id="quantity">
+                    1
+                </span>
+
+
+                <button id="plus">
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ADD TO CART -->
+
+        <button class="add-to-cart">
+            ADD TO CART
+        </button>
+
+
+        <a
+            href="cart.html"
+            class="go-to-cart">
+
+            GO TO CART →
+
+        </a>
+
+
+
+        <!-- BUY NOW -->
+
+        <button class="buy-now">
+            BUY IT NOW
+        </button>
+
+
+
+        <!-- DETAILS -->
+
+        <div class="details-list">
+
+
+            <div class="detail-row">
+
+                <span>
+                    Brand
+                </span>
+
+                <strong id="detail-brand">
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Category
+                </span>
+
+                <strong id="detail-category">
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Movement
+                </span>
+
+                <strong id="detail-movement">
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Collection
+                </span>
+
+                <strong>
+                    INTIME EDIT
+                </strong>
+
+            </div>
+
+
+            <div class="detail-row">
+
+                <span>
+                    Warranty
+                </span>
+
+                <strong>
+                    Manufacturer Warranty
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRODUCT STORY ================= -->
+
+<section class="product-story">
+
+    <div>
+
+        <p class="small-heading">
+            INTIME SELECTION
+        </p>
+
+        <h2>
+            Chosen for
+            <br>
+            <span>character.</span>
+        </h2>
+
+    </div>
+
+
+    <p id="story-text">
+
+        Every watch featured by INTIME is selected
+        for its design, craftsmanship and character.
+
+    </p>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        INTIME
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="shop.html">
+            Shop
+        </a>
+
+        <a href="brands.html">
+            Brands
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 INTIME. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* =====================================================
+   SINGLE WATCH DATABASE
+===================================================== */
+
+const watches = {
+
+
+    /* ================= SEIKO ================= */
+
+    "seiko-5-sports": {
+
+        brand: "SEIKO",
+        name: "Seiko 5 Sports",
+        category: "SPORT",
+        price: 35000,
+        image: "images/seiko/seiko-5-sports.jpg",
+        movement: "Automatic",
+        badge: "POPULAR",
+
+        description:
+            "A versatile Japanese sports watch combining dependable performance with a distinctive everyday design."
+
+    },
+
+
+    "seiko-presage": {
+
+        brand: "SEIKO",
+        name: "Seiko Presage",
+        category: "PREMIUM / DRESS",
+        price: 55000,
+        image: "images/seiko/seiko-presage.jpg",
+        movement: "Automatic",
+        badge: "POPULAR",
+
+        description:
+            "A refined Japanese timepiece combining traditional watchmaking aesthetics with modern reliability."
+
+    },
+
+
+    "seiko-prospex": {
+
+        brand: "SEIKO",
+        name: "Seiko Prospex",
+        category: "SPORT / DIVER",
+        price: 60000,
+        image: "images/seiko/seiko-prospex.jpg",
+        movement: "Automatic",
+        badge: "SPORT",
+
+        description:
+            "A rugged sports watch designed around Seiko's reputation for durable and capable timepieces."
+
+    },
+
+
+    "seiko-essentials": {
+
+        brand: "SEIKO",
+        name: "Seiko Essentials",
+        category: "EVERYDAY",
+        price: 30000,
+        image: "images/seiko/seiko-essentials.jpg",
+        movement: "Quartz",
+        badge: "EVERYDAY",
+
+        description:
+            "A clean everyday Seiko designed for simple styling and dependable daily wear."
+
+    },
+
+
+    /* ================= TISSOT ================= */
+
+    "tissot-gentleman": {
+
+        brand: "TISSOT",
+        name: "Tissot Gentleman",
+        category: "SWISS / PREMIUM",
+        price: 75000,
+        image: "images/tissot/tissot-gentleman.jpg",
+        movement: "Automatic",
+        badge: "PREMIUM",
+
+        description:
+            "A refined Swiss timepiece designed with elegant proportions and versatile everyday character."
+
+    },
+
+
+    "tissot-le-locle": {
+
+        brand: "TISSOT",
+        name: "Tissot Le Locle",
+        category: "SWISS / CLASSIC",
+        price: 70000,
+        image: "images/tissot/tissot-le-locle.jpg",
+        movement: "Automatic",
+        badge: "CLASSIC",
+
+        description:
+            "A classic Swiss watch inspired by traditional watchmaking and elegant design."
+
+    },
+
+
+    "tissot-prx": {
+
+        brand: "TISSOT",
+        name: "Tissot PRX",
+        category: "SWISS / SPORT",
+        price: 75000,
+        image: "images/tissot/tissot-prx.jpg",
+        movement: "Automatic",
+        badge: "POPULAR",
+
+        description:
+            "A modern Swiss timepiece inspired by integrated-bracelet designs and clean contemporary proportions."
+
+    },
+
+
+    "tissot-seastar": {
+
+        brand: "TISSOT",
+        name: "Tissot Seastar",
+        category: "SWISS / SPORT",
+        price: 65000,
+        image: "images/tissot/tissot-seastar.jpg",
+        movement: "Quartz",
+        badge: "SPORT",
+
+        description:
+            "A sporty Swiss timepiece designed for active lifestyles with a bold and practical character."
+
+    },
+
+
+    /* ================= CITIZEN ================= */
+
+    "citizen-eco-drive": {
+
+        brand: "CITIZEN",
+        name: "Citizen Eco-Drive",
+        category: "ECO-DRIVE",
+        price: 30000,
+        image: "images/citizen/citizen-eco-drive.jpg",
+        movement: "Eco-Drive",
+        badge: "POPULAR",
+
+        description:
+            "A practical Citizen timepiece featuring dependable everyday styling and Eco-Drive technology."
+
+    },
+
+
+    "citizen-promaster": {
+
+        brand: "CITIZEN",
+        name: "Citizen Promaster",
+        category: "SPORT / DIVER",
+        price: 50000,
+        image: "images/citizen/citizen-promaster.jpg",
+        movement: "Eco-Drive",
+        badge: "SPORT",
+
+        description:
+            "A capable sports timepiece combining functional design, durability and Citizen's distinctive technology."
+
+    },
+
+
+    "citizen-series-8": {
+
+        brand: "CITIZEN",
+        name: "Citizen Series 8",
+        category: "PREMIUM",
+        price: 85000,
+        image: "images/citizen/citizen-series-8.jpg",
+        movement: "Automatic",
+        badge: "PREMIUM",
+
+        description:
+            "A sophisticated automatic watch combining contemporary styling with refined Japanese watchmaking."
+
+    },
+
+
+    "citizen-tsuyosa": {
+
+        brand: "CITIZEN",
+        name: "Citizen Tsuyosa",
+        category: "ACCESSIBLE LUXURY",
+        price: 45000,
+        image: "images/citizen/citizen-tsuyosa.jpg",
+        movement: "Automatic",
+        badge: "POPULAR",
+
+        description:
+            "A contemporary automatic watch with a distinctive integrated-bracelet aesthetic and refined proportions."
+
+    },
+
+
+    /* ================= CASIO ================= */
+
+    "casio-edifice": {
+
+        brand: "CASIO",
+        name: "Casio Edifice",
+        category: "EVERYDAY",
+        price: 12000,
+        image: "images/casio/casio-edifice.jpg",
+        movement: "Quartz",
+        badge: "POPULAR",
+
+        description:
+            "A sporty Casio combining contemporary design with everyday practicality."
+
+    },
+
+
+    "casio-enticer": {
+
+        brand: "CASIO",
+        name: "Casio Enticer",
+        category: "CLASSIC",
+        price: 8000,
+        image: "images/casio/casio-enticer.jpg",
+        movement: "Quartz",
+        badge: "CLASSIC",
+
+        description:
+            "A clean classic Casio designed for reliable everyday use."
+
+    },
+
+
+    "casio-gshock": {
+
+        brand: "CASIO",
+        name: "G-Shock",
+        category: "SPORT",
+        price: 15000,
+        image: "images/casio/casio-gshock.jpg",
+        movement: "Quartz",
+        badge: "BESTSELLER",
+
+        description:
+            "A legendary everyday sports watch built around durability, functionality and unmistakable design."
+
+    },
+
+
+    "casio-vintage": {
+
+        brand: "CASIO",
+        name: "Casio Vintage",
+        category: "RETRO",
+        price: 6000,
+        image: "images/casio/casio-vintage.jpg",
+        movement: "Quartz",
+        badge: "RETRO",
+
+        description:
+            "A retro-inspired Casio combining iconic styling with practical everyday functionality."
+
+    },
+
+
+    /* ================= ORIENT ================= */
+
+    "orient-bambino": {
+
+        brand: "ORIENT",
+        name: "Orient Bambino",
+        category: "CLASSIC",
+        price: 35000,
+        image: "images/orient/orient-bambino.jpg",
+        movement: "Automatic",
+        badge: "CLASSIC",
+
+        description:
+            "A refined Japanese classic known for its elegant dial and traditional styling."
+
+    },
+
+
+    "orient-contempo": {
+
+        brand: "ORIENT",
+        name: "Orient Contempo",
+        category: "CLASSIC",
+        price: 30000,
+        image: "images/orient/orient-contempo.jpg",
+        movement: "Automatic",
+        badge: "CLASSIC",
+
+        description:
+            "A modern Japanese automatic watch with clean and versatile styling."
+
+    },
+
+
+    "orient-mako": {
+
+        brand: "ORIENT",
+        name: "Orient Mako",
+        category: "SPORT / DIVER",
+        price: 32000,
+        image: "images/orient/orient-mako.jpg",
+        movement: "Automatic",
+        badge: "SPORT",
+
+        description:
+            "A capable Japanese sports watch designed around a bold diver-inspired aesthetic."
+
+    },
+
+
+    "orient-kamasu": {
+
+        brand: "ORIENT",
+        name: "Orient Kamasu",
+        category: "SPORT / DIVER",
+        price: 40000,
+        image: "images/orient/orienty-kamasu.jpg",
+        movement: "Automatic",
+        badge: "SPORT",
+
+        description:
+            "A rugged Japanese automatic diver-inspired watch with a strong everyday presence."
+
+    },
+
+
+    /* ================= FOSSIL ================= */
+
+    "fossil-fenmore": {
+
+        brand: "FOSSIL",
+        name: "Fossil Fenmore",
+        category: "FASHION",
+        price: 18000,
+        image: "images/fossil/fossil-fenmore.jpg",
+        movement: "Quartz",
+        badge: "STYLE",
+
+        description:
+            "A contemporary Fossil timepiece combining modern fashion styling with everyday versatility."
+
+    },
+
+
+    "fossil-grant": {
+
+        brand: "FOSSIL",
+        name: "Fossil Grant",
+        category: "CLASSIC",
+        price: 16000,
+        image: "images/fossil/fossil-grant.jpg",
+        movement: "Quartz",
+        badge: "CLASSIC",
+
+        description:
+            "A classic Fossil design combining traditional styling with modern everyday wearability."
+
+    },
+
+
+    "fossil-machine": {
+
+        brand: "FOSSIL",
+        name: "Fossil Machine",
+        category: "SPORT / FASHION",
+        price: 20000,
+        image: "images/fossil/fossil-machine.jpg",
+        movement: "Quartz",
+        badge: "SPORT",
+
+        description:
+            "A bold Fossil timepiece designed around rugged styling and contemporary fashion."
+
+    },
+
+
+    "fossil-neutra": {
+
+        brand: "FOSSIL",
+        name: "Fossil Neutra",
+        category: "MINIMAL",
+        price: 17000,
+        image: "images/fossil/fossil-neutra.jpg",
+        movement: "Quartz",
+        badge: "MINIMAL",
+
+        description:
+            "A minimalist Fossil watch with clean proportions and versatile everyday styling."
+
+    }
+
+};
+
+
+
+/* =====================================================
+   GET PRODUCT ID
+===================================================== */
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const productID =
+    urlParams.get("id");
+
+const product =
+    watches[productID];
+
+
+
+/* =====================================================
+   PRODUCT NOT FOUND
+===================================================== */
+
+if (!product) {
+
+    document.body.innerHTML = `
+
+        <div style="
+            text-align:center;
+            padding:120px 20px;
+        ">
+
+            <h1>Product Not Found</h1>
+
+            <p>
+                This watch could not be found.
+            </p>
+
+            <br>
+
+            <a href="shop.html">
+                ← BACK TO SHOP
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =====================================================
+   DISPLAY PRODUCT
+===================================================== */
+
+else {
+
+    document.title =
+        product.name + " | INTIME";
+
+
+    document.getElementById(
+        "product-name"
+    ).textContent =
+        product.name;
+
+
+    document.getElementById(
+        "product-category"
+    ).textContent =
+        product.category;
+
+
+    document.getElementById(
+        "product-price"
+    ).textContent =
+        "₹" +
+        product.price.toLocaleString("en-IN");
+
+
+    document.getElementById(
+        "product-description"
+    ).textContent =
+        product.description;
+
+
+    document.getElementById(
+        "product-image"
+    ).src =
+        product.image;
+
+
+    document.getElementById(
+        "product-image"
+    ).alt =
+        product.name;
+
+
+    document.getElementById(
+        "product-badge"
+    ).textContent =
+        product.badge;
+
+
+    document.getElementById(
+        "detail-brand"
+    ).textContent =
+        product.brand;
+
+
+    document.getElementById(
+        "detail-category"
+    ).textContent =
+        product.category;
+
+
+    document.getElementById(
+        "detail-movement"
+    ).textContent =
+        product.movement;
+
+
+    document.getElementById(
+        "story-text"
+    ).textContent =
+        product.name +
+        " is part of the INTIME selection — chosen for its design, character and place within modern watch culture.";
+
+}
+
+
+
+/* =====================================================
+   QUANTITY
+===================================================== */
+
+let quantity = 1;
+
+
+const minusButton =
+    document.getElementById("minus");
+
+const plusButton =
+    document.getElementById("plus");
+
+const quantityDisplay =
+    document.getElementById("quantity");
+
+
+plusButton.addEventListener(
+    "click",
+    function() {
+
+        quantity++;
+
+        quantityDisplay.textContent =
+            quantity;
+
+    }
+);
+
+
+minusButton.addEventListener(
+    "click",
+    function() {
+
+        if (quantity > 1) {
+
+            quantity--;
+
+            quantityDisplay.textContent =
+                quantity;
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+const addToCartButton =
+    document.querySelector(
+        ".add-to-cart"
+    );
+
+
+addToCartButton.addEventListener(
+    "click",
+    function() {
+
+        if (!product) return;
+
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem(
+                    "velorCart"
+                )
+            ) || [];
+
+
+        const existingProduct =
+            cart.find(function(item) {
+
+                return item.id === productID;
+
+            });
+
+
+        if (existingProduct) {
+
+            existingProduct.quantity +=
+                quantity;
+
+        }
+
+        else {
+
+            cart.push({
+
+                id: productID,
+
+                brand: product.brand,
+
+                name: product.name,
+
+                price: product.price,
+
+                image: product.image,
+
+                quantity: quantity
+
+            });
+
+        }
+
+
+        localStorage.setItem(
+            "velorCart",
+            JSON.stringify(cart)
+        );
+
+
+        addToCartButton.textContent =
+            "ADDED TO CART ✓";
+
+
+        document.querySelector(
+            ".go-to-cart"
+        ).style.display =
+            "block";
+
+
+        updateCartCount();
+
+    }
+);
+
+
+
+/* =====================================================
+   BUY NOW
+===================================================== */
+
+const buyNowButton =
+    document.querySelector(
+        ".buy-now"
+    );
+
+
+buyNowButton.addEventListener(
+    "click",
+    function() {
+
+        if (!product) return;
+
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem(
+                    "velorCart"
+                )
+            ) || [];
+
+
+        const existingProduct =
+            cart.find(function(item) {
+
+                return item.id === productID;
+
+            });
+
+
+        if (existingProduct) {
+
+            existingProduct.quantity +=
+                quantity;
+
+        }
+
+        else {
+
+            cart.push({
+
+                id: productID,
+
+                brand: product.brand,
+
+                name: product.name,
+
+                price: product.price,
+
+                image: product.image,
+
+                quantity: quantity
+
+            });
+
+        }
+
+
+        localStorage.setItem(
+            "velorCart",
+            JSON.stringify(cart)
+        );
+
+
+        window.location.href =
+            "cart.html";
+
+    }
+);
+
+
+
+/* =====================================================
+   CART COUNT
+===================================================== */
+
+function updateCartCount() {
+
+    const cart =
+        JSON.parse(
+            localStorage.getItem(
+                "velorCart"
+            )
+        ) || [];
+
+
+    const totalQuantity =
+        cart.reduce(
+            function(total, item) {
+
+                return total +
+                    Number(item.quantity);
+
+            },
+            0
+        );
+
+
+    document
+        .querySelectorAll(".cart-count")
+        .forEach(function(counter) {
+
+            counter.textContent =
+                totalQuantity;
+
+        });
+
+}
+
+
+updateCartCount();
+
+
+</script>
+
+
+</body>
+
+</html>

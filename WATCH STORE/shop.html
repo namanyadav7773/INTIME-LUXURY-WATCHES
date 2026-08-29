@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="VÉLOR — Multi-brand watch store.">
+
+    <title>Shop | VÉLOR</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<header class="shop-header">
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            VÉLOR
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="shop.html">
+                Shop
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div class="nav-icons">
+
+            <a href="search.html">
+                Search
+            </a>
+
+            <a href="cart.html">
+                Cart
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= BRAND FILTER ================= -->
+
+<section class="brand-filter">
+
+    <p class="small-heading">
+        SHOP BY BRAND
+    </p>
+
+
+    <div class="brand-filter-links">
+
+    <a href="shop.html">
+        ALL
+    </a>
+
+    <a href="shop.html?brand=seiko">
+        SEIKO
+    </a>
+
+    <a href="shop.html?brand=tissot">
+        TISSOT
+    </a>
+
+    <a href="shop.html?brand=citizen">
+        CITIZEN
+    </a>
+
+    <a href="shop.html?brand=casio">
+        CASIO
+    </a>
+
+    <a href="shop.html?brand=orient">
+        ORIENT
+    </a>
+
+    <a href="shop.html?brand=fossil">
+        FOSSIL
+    </a>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= SHOP ================= -->
+
+<main class="shop-container">
+
+
+    <div class="shop-top">
+
+        <p id="product-count">
+            WATCHES
+        </p>
+
+
+        <select id="sort-products">
+
+            <option value="featured">
+                Sort: Featured
+            </option>
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- PRODUCTS -->
+
+    <div
+        class="shop-products"
+        id="products-container">
+    </div>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        VÉLOR
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+    <p>
+        © 2026 VÉLOR. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+const watches = [
+
+    {
+        id: "seiko-5-sports",
+        brand: "seiko",
+        name: "Seiko 5 Sports",
+        category: "SPORT",
+        price: 35000,
+        image: "images/seiko/seiko-5-sports.jpg"
+    },
+
+    {
+        id: "seiko-presage",
+        brand: "seiko",
+        name: "Seiko Presage",
+        category: "PREMIUM",
+        price: 55000,
+        image: "images/seiko/seiko-presage.jpg"
+    },
+
+    {
+        id: "seiko-prospex",
+        brand: "seiko",
+        name: "Seiko Prospex",
+        category: "SPORT",
+        price: 60000,
+        image: "images/seiko/seiko-prospex.jpg"
+    },
+
+    {
+        id: "seiko-essentials",
+        brand: "seiko",
+        name: "Seiko Essentials",
+        category: "EVERYDAY",
+        price: 30000,
+        image: "images/seiko/seiko-essentials.jpg"
+    },
+
+    {
+        id: "tissot-gentleman",
+        brand: "tissot",
+        name: "Tissot Gentleman",
+        category: "SWISS / PREMIUM",
+        price: 75000,
+        image: "images/tissot/tissot-gentleman.jpg"
+    },
+
+    {
+        id: "tissot-le-locle",
+        brand: "tissot",
+        name: "Tissot Le Locle",
+        category: "SWISS / CLASSIC",
+        price: 70000,
+        image: "images/tissot/tissot-le-locle.jpg"
+    },
+
+    {
+        id: "tissot-pxr",
+        brand: "tissot",
+        name: "Tissot PRX",
+        category: "SWISS / SPORT",
+        price: 75000,
+        image: "images/tissot/tissot-pxr.jpg"
+    },
+
+    {
+        id: "tissot-seastar",
+        brand: "tissot",
+        name: "Tissot Seastar",
+        category: "SWISS / SPORT",
+        price: 65000,
+        image: "images/tissot/tissot-seastar.jpg"
+    },
+
+    {
+        id: "citizen-eco-drive",
+        brand: "citizen",
+        name: "Citizen Eco-Drive",
+        category: "ECO-DRIVE",
+        price: 30000,
+        image: "images/citizen/citizen-eco-drive.jpg"
+    },
+
+    {
+        id: "citizen-promaster",
+        brand: "citizen",
+        name: "Citizen Promaster",
+        category: "SPORT / DIVER",
+        price: 50000,
+        image: "images/citizen/citizen-promaster.jpg"
+    },
+
+    {
+        id: "citizen-series-8",
+        brand: "citizen",
+        name: "Citizen Series 8",
+        category: "PREMIUM",
+        price: 85000,
+        image: "images/citizen/citizen-series-8.jpg"
+    },
+
+    {
+        id: "citizen-tsuyosa",
+        brand: "citizen",
+        name: "Citizen Tsuyosa",
+        category: "ACCESSIBLE LUXURY",
+        price: 45000,
+        image: "images/citizen/citizen-tsuyosa.jpg"
+    },
+
+    {
+        id: "casio-edifice",
+        brand: "casio",
+        name: "Casio Edifice",
+        category: "EVERYDAY",
+        price: 12000,
+        image: "images/casio/casio-edifice.jpg"
+    },
+
+    {
+        id: "casio-enticer",
+        brand: "casio",
+        name: "Casio Enticer",
+        category: "CLASSIC",
+        price: 8000,
+        image: "images/casio/casio-enticer.jpg"
+    },
+
+    {
+        id: "casio-gshock",
+        brand: "casio",
+        name: "G-Shock",
+        category: "SPORT",
+        price: 15000,
+        image: "images/casio/casio-gshock.jpg"
+    },
+
+    {
+        id: "casio-vintage",
+        brand: "casio",
+        name: "Casio Vintage",
+        category: "RETRO",
+        price: 6000,
+        image: "images/casio/casio-vintage.jpg"
+    },
+
+    {
+        id: "orient-bambino",
+        brand: "orient",
+        name: "Orient Bambino",
+        category: "CLASSIC",
+        price: 35000,
+        image: "images/orient/orient-bambino.jpg"
+    },
+
+    {
+        id: "orient-contemporary",
+        brand: "orient",
+        name: "Orient Contemporary",
+        category: "CLASSIC",
+        price: 30000,
+        image: "images/orient/orient-contemporary.jpg"
+    },
+
+    {
+        id: "orient-mako",
+        brand: "orient",
+        name: "Orient Mako",
+        category: "SPORT / DIVER",
+        price: 32000,
+        image: "images/orient/orient-mako.jpg"
+    },
+
+    {
+        id: "orient-kamasu",
+        brand: "orient",
+        name: "Orient Kamasu",
+        category: "SPORT / DIVER",
+        price: 40000,
+        image: "images/orient/orienty-kamasu.jpg"
+    },
+
+    {
+        id: "fossil-fenmore",
+        brand: "fossil",
+        name: "Fossil Fenmore",
+        category: "FASHION",
+        price: 18000,
+        image: "images/fossil/fossil-fenmore.jpg"
+    },
+
+    {
+        id: "fossil-grant",
+        brand: "fossil",
+        name: "Fossil Grant",
+        category: "CLASSIC",
+        price: 16000,
+        image: "images/fossil/fossil-grant.jpg"
+    },
+
+    {
+        id: "fossil-machine",
+        brand: "fossil",
+        name: "Fossil Machine",
+        category: "SPORT / FASHION",
+        price: 20000,
+        image: "images/fossil/fossil-machine.jpg"
+    },
+
+    {
+        id: "fossil-neutra",
+        brand: "fossil",
+        name: "Fossil Neutra",
+        category: "MINIMAL",
+        price: 17000,
+        image: "images/fossil/fossil-neutra.jpg"
+    }
+];
+
+
+const params = new URLSearchParams(window.location.search);
+
+const selectedBrand =
+    (params.get("brand") || "").toLowerCase().trim();
+
+
+const productsContainer =
+    document.getElementById("products-container");
+
+
+let displayedWatches = watches;
+
+
+if (selectedBrand) {
+
+    displayedWatches = watches.filter(function(watch) {
+
+        return watch.brand === selectedBrand;
+
+    });
+
+}
+
+
+function displayProducts(products) {
+
+    productsContainer.innerHTML = "";
+
+    products.forEach(function(watch) {
+
+        const productCard =
+            document.createElement("article");
+
+        productCard.className = "shop-product";
+
+        productCard.innerHTML = `
+
+            <div class="shop-product-image">
+
+                <img
+                    src="${watch.image}"
+                    alt="${watch.name}"
+                >
+
+            </div>
+
+            <div class="shop-product-info">
+
+                <div>
+
+                    <p class="category">
+                        ${watch.brand.toUpperCase()}
+                    </p>
+
+                    <h2>
+                        ${watch.name}
+                    </h2>
+
+                </div>
+
+                <p class="shop-price">
+                    ₹${watch.price.toLocaleString("en-IN")}
+                </p>
+
+            </div>
+
+            <a
+                href="product.html?id=${watch.id}"
+                class="view-product">
+
+                VIEW PRODUCT →
+
+            </a>
+        `;
+
+        productsContainer.appendChild(productCard);
+
+    });
+
+
+    document.getElementById("product-count").textContent =
+        products.length + " TIMEPIECES";
+
+}
+
+
+displayProducts(displayedWatches);
+
+
+document
+    .getElementById("sort-products")
+    .addEventListener("change", function() {
+
+        let sorted = [...displayedWatches];
+
+        if (this.value === "low") {
+
+            sorted.sort(function(a, b) {
+                return a.price - b.price;
+            });
+
+        }
+
+        if (this.value === "high") {
+
+            sorted.sort(function(a, b) {
+                return b.price - a.price;
+            });
+
+        }
+
+        displayProducts(sorted);
+
+    });
+
+
+function updateCartCount() {
+
+    const cart =
+        JSON.parse(localStorage.getItem("velorCart")) || [];
+
+    const totalQuantity =
+        cart.reduce(function(total, product) {
+
+            return total + product.quantity;
+
+        }, 0);
+
+    document
+        .querySelectorAll(".cart-count")
+        .forEach(function(counter) {
+
+            counter.textContent = totalQuantity;
+
+        });
+
+}
+
+
+updateCartCount();
+
+</script>
+
+</body>
+
+</html>
